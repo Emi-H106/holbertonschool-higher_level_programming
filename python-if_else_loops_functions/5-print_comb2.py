@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-
-print(', '.join(f"{i:02}" for i in range(100)), end='\n')
+for i in range(100):
+    if i == 99:
+        print("{0:02}".format(i))
+    else:
+        print("{0:02}".format(i), end=', ')
