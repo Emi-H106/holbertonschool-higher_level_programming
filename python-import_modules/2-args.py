@@ -2,6 +2,7 @@
 
 import sys
 
+
 def print_arguments():
     argv = sys.argv[1:]
     num_arguments = len(argv)
@@ -15,6 +16,7 @@ def print_arguments():
 
     for i in range(len(argv)):
         print(f"{i + 1}: {argv[i]}")
+
 
 if __name__ == "__main__":
     print_arguments()
