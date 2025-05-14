@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    if type(roman_string) != str or roman_string is None:
+    if not isinstance(roman_string, str) or roman_string is None:
         return 0
 
     roman_to_value = {
@@ -15,7 +15,7 @@ def roman_to_int(roman_string):
     }
 
     total = 0
-    prev_value =  0
+    prev_value = 0
 
     for char in reversed(roman_string):
         value = roman_to_value.get(char, 0)
