@@ -14,3 +14,8 @@ def roman_to_int(roman_string):
             'M': 1000
     }
 
+    total = 0
+    i = 0
+
+    while i < len(roman_string):
+        current_value = roman_to_value[roman_string[i]]
