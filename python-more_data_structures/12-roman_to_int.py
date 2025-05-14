@@ -15,7 +15,14 @@ def roman_to_int(roman_string):
     }
 
     total = 0
-    i = 0
+    prev_value =  0
 
-    while i < len(roman_string):
-        current_value = roman_to_value[roman_string[i]]
+    for char in reversed(roman_string):
+        value = roman_to_value.get(char, 0)
+        if value < prev_value:
+            total -= value
+        else:
+            total += value
+        prev_value = value
+
+    return total
