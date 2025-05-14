@@ -10,8 +10,8 @@ def list_division(my_list_1, my_list_2, list_length):
             if elem1 is None or elem2 is None:
                 raise IndexError("out of range")
 
-            if not isinstance(elem1, (int, float)) or
-            not isinstance(elem2, (int, float)):
+            if (not isinstance(elem1, (int, float)) or
+                    not isinstance(elem2, (int, float))):
                 raise TypeError("wrong type")
 
             if elem2 == 0:
