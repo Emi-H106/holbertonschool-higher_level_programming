@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+add_integer = __import__('0-add_integer').add_integer
+
+print(add_integer(5, 8))
+print(add_integer(50, -2))
+print(add_integer(6))
+print(add_integer(112.6, -4))
+try:
+    print(add_integer(7, "Hello"))
+except Exception as e:
+    print(e)
+try:
+    print(add_integer(None))
+except Exception as e:
+    print(e)
