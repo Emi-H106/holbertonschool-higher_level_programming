@@ -2,7 +2,9 @@
 
 def text_indentation(text):
     """
-    The text_indentation function takes a string as input and prints it with two newlines added after each occurrence of the characters ., ?, and :.
+    The text_indentation function takes a string as input
+    and prints it with two newlines added after each occurrence
+    of the characters ., ?, and :.
 
     Parameters:
     text (str): The input string to be processed.
