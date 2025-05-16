@@ -25,6 +25,13 @@ class TestMaxInteger(unittest.TestCase):
     def test_single_element(self):
         self.assertEqual(max_integer([7]), 7)
 
+    def test_no_argument(self):
+        self.assertEqual(max_integer(), None)
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_float(self):
+        self.assertEqual(max_integer([3.2, 4.8, 5.5]), 5.5)
+
+    def test_string(self):
+        self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
+        with self.assertRaises(TypeError):
+            max_integer(['a', 'b', 'c', 1])
