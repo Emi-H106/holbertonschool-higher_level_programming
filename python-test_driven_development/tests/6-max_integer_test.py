@@ -26,7 +26,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([7]), 7)
 
     def test_no_argument(self):
-        self.assertEqual(max_integer())
+        self.assertEqual(max_integer(), None)
 
     def test_float(self):
         self.assertEqual(max_integer([3.2, 4.8, 5.5]), 5.5)
