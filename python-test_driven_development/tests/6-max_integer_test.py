@@ -26,12 +26,14 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([7]), 7)
 
     def test_no_argument(self):
-        self.assertEqual(max_integer(), None)
+        self.assertEqual(max_integer())
 
     def test_float(self):
         self.assertEqual(max_integer([3.2, 4.8, 5.5]), 5.5)
 
-    def test_string(self):
+    def test_string_list(self):
         self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
+
+    def test_mixed_types(self):
         with self.assertRaises(TypeError):
-            max_integer(['a', 'b', 'c', 1])
+            max_integer(['a', 1, 'b'])
