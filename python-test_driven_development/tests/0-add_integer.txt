@@ -2,18 +2,29 @@
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
+ 
+Positive integer
+-----------------
 
 >>> add_integer(5, 3)
 8
 
+>>> add_integer(6)
+104
+
+Negative integer
+----------------
 
 >>> add_integer(50, -3)
 47
 
 
->>> add_integer(6)
-104
+>>> add_integer(-20, -3)
+-23
 
+
+float
+------
 
 >>> add_integer(100.2, -3)
 97
@@ -30,6 +41,8 @@
 >>> add_integer(20.555, 9)
 29
 
+Error case
+-----------
 
 >>> add_integer(5, "Hello")
 Traceback (most recent call last):
