@@ -1,0 +1,32 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello, world! How are you? I'm fine, thank you.")
+Hello, world! How are you?
+<BLANKLINE> 
+I'm fine, thank you.
+<BLANKLINE>
+
+>>> text_indentation("This is a single sentence without any delimiters")
+This is a single sentence without any delimiters
+
+
+>>> text_indentation("First sentence. Second sentence? Third sentence: And more.")
+First sentence.
+<BLANKLINE>
+Second sentence?
+<BLANKLINE>
+Third sentence:
+<BLANKLINE>
+And more.
+<BLANKLINE>
+
+>>> text_indentation("")
+
+
+>>> text_indentation("  Hello, world!  ")
+Hello, world!
+
+
+>>> text_indentation(12345)
+Traceback (most recent call last):
+TypeError: text must be a string
