@@ -1,5 +1,8 @@
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
+Regular Strings
+---------------
+
 >>> say_my_name("John", "White")
 My name is John White
 
@@ -11,6 +14,9 @@ My name is Mary
 My name is Jean-Pierre Dupond
 
 
+Wrong type as name
+-------------------
+
 >>> say_my_name(12, "Smith")
 Traceback (most recent call last):
 TypeError: first_name must be a string
@@ -19,3 +25,18 @@ TypeError: first_name must be a string
 >>> say_my_name("Anne", 1.11)
 Traceback (most recent call last):
 TypeError: last_name must be a string
+
+
+Wrong arguments
+---------------
+
+>>> say_my_name()
+	Traceback (most recent call last):
+        ...
+	TypeError: no argument
+
+
+>>> say_my_name("John", "Smith", "Mary")
+        Traceback (most recent call last):
+        ...
+	TypeError: too many argument
