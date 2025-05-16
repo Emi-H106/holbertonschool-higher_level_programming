@@ -4,13 +4,14 @@
 This module provides a function to add two integers.
 """
 
+
 def add_integer(a, b=98):
     """
     Adds two numbers.
 
     Args:
-        a (integers or floats): The first number.
-        b (integers or floats): The second number. Default to 98.
+        a (int or float): The first number.
+        b (int or float): The second number. Defaults to 98.
 
     Returns:
         int: The addition of a and b.
