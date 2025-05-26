@@ -15,3 +15,9 @@ class MyList(list):
         Prints the list in ascending sorted order.
         """
         print(sorted(self))
+
+    def __str__(self):
+        """
+        Returns a string representation of the list.
+        """
+        return str(self)
