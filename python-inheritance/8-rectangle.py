@@ -38,7 +38,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    A class that inherit BaseGeometry
+    A class representing a rectangle, inheriting from BaseGeometry.
     """
 
     def __init__(self, width, height):
