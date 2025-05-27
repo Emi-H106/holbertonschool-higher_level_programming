@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+This module defines an abstract base class `Animal` and two subclasses `Dog` and `Cat`.
+"""
 
 from abc import ABC, abstractmethod
 
