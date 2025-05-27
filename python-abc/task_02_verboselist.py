@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""
+This module provides a custom list class named VerboseList
+that extends the built-in list class.
+VerboseList prints notification messages whenever
+items are added or removed from the list.
+"""
+
 
 class VerboseList(list):
     """
