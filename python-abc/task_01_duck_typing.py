@@ -107,3 +107,12 @@ def shape_info(shape):
     """
     print("Area: {}".format(shape.area()))
     print("Perimeter: {}".format(shape.perimeter()))
+
+
+# Testing the implementation
+if __name__ == "__main__":
+    circle = Circle(radius=6)
+    rectangle = Rectangle(width=5, height=8)
+
+    shape_info(circle)
+    shape_info(rectangle)
