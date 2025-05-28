@@ -42,7 +42,7 @@ class Circle(Shape):
         Args:
             radius (float): The radius of the circle.
         """
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """
@@ -113,6 +113,5 @@ def shape_info(shape):
 if __name__ == "__main__":
     circle = Circle(radius=6)
     rectangle = Rectangle(width=5, height=8)
-
     shape_info(circle)
     shape_info(rectangle)
