@@ -115,5 +115,7 @@ TypeError: '<' not supported between instances of 'int' and 'str'
 Empty list
 ----------
 >>> my_list = MyList()
+>>> print(my_list)
+[]
 >>> my_list.print_sorted()
 []
