@@ -110,3 +110,10 @@ String and Integer list
 Traceback (most recent call last):
         ...
 TypeError: '<' not supported between instances of 'int' and 'str'
+
+
+Empty list
+----------
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
