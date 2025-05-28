@@ -66,3 +66,11 @@ Dictionary
 Traceback (most recent call last):
 	...
 TypeError: animal must be an integer
+
+Empty value
+-----------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+	...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
