@@ -24,12 +24,13 @@ class Student:
         Retrieve a dictionary representation of the Student instance.
 
         Parameters:
-            attrs (list of str) : A list of attribute names to 
+            attrs (list of str) : A list of attribute names to
                                   include in the dictionary.
                                   If None, all attributes are included.
 
         Returns:
-            dict: A dictionary containing the specified attributes of the student.
+            dict: A dictionary containing the specified attributes
+            of the student.
         """
         if attrs is None:
             return {
@@ -38,7 +39,11 @@ class Student:
                      'age': self.age
                     }
         else:
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+            result = {}
+            for attr in attrs:
+                if hasattr(self, attr):
+                    result[attr] = getattr(self, attr)
+            return result
 
     def reload_from_json(self, json):
         """
@@ -56,4 +61,8 @@ class Student:
         """
         Return a string representation of the Student instance.
         """
-        return "<{0.__class__.__module__}.{0.__class__.__name__} object at {1}>".format(self, hex(id(self)))
+        class_name = self.__class__.__name__
+        module_name = self.__class__.__module__
+        object_id = hex(id(self))
+        return "<{}.{} object at {}>".format(
+                module_name, class_name, object_id)
