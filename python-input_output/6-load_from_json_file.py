@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module provides a function to load a Python object from a JSON file.
+"""
+
 
 import json
 

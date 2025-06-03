@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines a Student class for representing
+student information and converting it to a dictionary format.
+"""
 
 
 class Student:

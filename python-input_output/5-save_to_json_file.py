@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module provides a function to serialize Python objects and save them
+to a file in JSON format.
+"""
+
 
 import json
 

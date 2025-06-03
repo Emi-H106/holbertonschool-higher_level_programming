@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Module for the Student class, which represents a student and
+allows serialization to and from a dictionary.
+"""
 
 
 class Student:

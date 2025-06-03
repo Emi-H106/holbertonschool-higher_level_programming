@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module defines the Student class for storing a student’s name
+and age, and provides a method to get their information
+as a dictionary.
+"""
 
 
 class Student:

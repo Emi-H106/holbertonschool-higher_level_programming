@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This script adds command line arguments to a list and saves it to
+'add_item.json' in JSON format, creating the file if it does not exist.
+"""
 
 import sys
 
