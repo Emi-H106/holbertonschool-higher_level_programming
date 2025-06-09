@@ -1,0 +1,68 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Integer
+-------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", 12)
+
+
+
+Zero value
+----------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+	...
+ValueError: width must be greater than 0
+
+
+Negative integer
+----------------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("hight", -18)
+Traceback (most recent call last):
+	...
+ValueError: hight must be greater than 0
+
+
+String value
+------------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("school", "hello")
+Traceback (most recent call last):
+	...
+TypeError: school must be an integer
+
+
+Float value
+-----------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("distance", 4.8)
+Traceback (most recent call last):
+	...
+TypeError: distance must be an integer
+
+
+Large positive integer
+----------------------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("length", 1234567890000000)
+
+
+
+List
+----
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("class", [3, 7, 9])
+Traceback (most recent call last):
+	...
+TypeError: class must be an integer
+
+
+Dictionary
+----------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("animal", {"key": "dog"})
+Traceback (most recent call last):
+	...
+TypeError: animal must be an integer
