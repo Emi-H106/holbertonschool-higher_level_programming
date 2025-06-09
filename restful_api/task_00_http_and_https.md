@@ -16,9 +16,9 @@
 ## :books:  The structure of an HTTP request and response
 - **HTTP Request Example**
 ```
-GET / HTTP/1.1              ← *Method - Path - HTTP version*
-Host: developer.mozilla.org   ← *Header*
-Accept-Language: fr           ← *Header*
+GET / HTTP/1.1              ← Method - Path - HTTP version
+Host: developer.mozilla.org   ← Header
+Accept-Language: fr           ← Header
 ```
 An HTTP request typically includes the following components:<br><br>
 **Method**: Defines the action (e.g., GET, POST, OPTIONS, HEAD)<br>
