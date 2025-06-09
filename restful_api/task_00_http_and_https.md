@@ -20,7 +20,7 @@ GET / HTTP/1.1              ← *Method - Path - HTTP version*
 Host: developer.mozilla.org   ← *Header*
 Accept-Language: fr           ← *Header*
 ```
-An HTTP request typically includes the following components:<br <br>>
+An HTTP request typically includes the following components:<br><br>
 **Method**: Defines the action (e.g., GET, POST, OPTIONS, HEAD)<br>
 **Path**: The specific resource being requested, without protocol, domain, or port.<br>
 **HTTP Version**: Indicates the protocol version used.<br>
