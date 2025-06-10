@@ -39,12 +39,13 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
                     "version": "1.0",
                     "description": "A simple API built with http.server"
                     }
-            self.wfile.write(json.dumps(info).encode())
+            self.wfile.write(json.dumps(info).encode('utf-8'))
         else:
             self.send_response(404)
-            self.send_header("Content-type", "application/json")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            error = {b"Endpoint not found"}
+            self.wfile.write(b"Endpoint not found")
+
 
 
 def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
