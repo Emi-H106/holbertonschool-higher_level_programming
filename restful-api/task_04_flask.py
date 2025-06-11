@@ -12,10 +12,6 @@ app = Flask(__name__)
 def home():
     return "Welcome to the Flask API!"
 
-
-if __name__ == "__main__":
-    app.run()
-
 users = {
     "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
     "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
@@ -55,7 +51,11 @@ def add_user():
             "city" : data.get("city")
             }
 
-    return jasonify({
+    return jsonify({
         "message" : "User added",
         "user" : users[username]
         }), 201
+
+
+if __name__ == "__main__":
+    app.run()    
