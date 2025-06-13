@@ -67,6 +67,11 @@ def admin_only():
         return jsonify({"error": "Admin access required"}), 403
     return "Admin Access: Granted"
 
+
+@auth.error_response
+def unauthorized_response():
+    return jsonify({"error": "Unauthorized access"}), 401
+
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
