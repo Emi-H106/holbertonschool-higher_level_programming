@@ -49,12 +49,12 @@ def login():
         return jsonify({"error": "Invalid username or password"}), 401
 
     access_token = create_access_token(identify={"username": username, "role": user["role"]})
-    return jsonify(access_token=access_token)
+    return jsonify(access_token=access_token), 200
 
 @app.route('/jwt-protected', methods=["GET"])
 @jwt_required()
 def jwt_protected():
-    return "JWT Auth: Access Granted"
+    return "JWT Auth: Access Granted", 200
 
 @app.route('/admin-only', methodes["GET"])
 @jwt_required()
@@ -62,7 +62,7 @@ def admin_only():
     current_user = get_jwt_identify()
     if current_user.get('role') != 'admin':
         return jsonify({"error": "Admin access required"}), 403
-    return "Admin Access: Granted"
+    return "Admin Access: Granted", 200
 
 
 @jwt.unauthorized_loader
@@ -87,4 +87,4 @@ def handle_needs_fresh_token_error(jwt_header, jwt_payload):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
