@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
-from flask_jwt_extended import get_jwt
+from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
@@ -35,35 +35,32 @@ def verify_password(username, password):
     if user and check_password_hash(user['password'], password):
         return user
 
-@app.route('/basic-protected')
+@app.route('/basic-protected', methods=["GET"])
 @auth.login_required
 def basic_protected():
     return "Basic Auth: Access Granted"
 
 @app.route('/login', methods=['POST'])
 def login():
-    data = request.get_json()
-    username = data.get('username')
-    password = data.get('password')
+    username = request.json.get('username')
+    password = requestjson.get('password')
     user = users.get(username)
-    if user and check_password_hash(user['password'], password):
-        access_token = create_access_token(
-            identity=username,
-             additional_claims={"role": user["role"]}
-             )
-        return jsonify(access_token=access_token), 200
-    return jsonify({"error": "Invalid credentials"}), 401
+    if not user or not check_password_hash(user["password"], password):
+        return jsonify({"error": "Invalid username or password"}), 401
 
-@app.route('/jwt-protected')
+    access_token = create_access_token(identify={"username": username, "role": user["role"]})
+    return jsonify(access_token=access_token)
+
+@app.route('/jwt-protected', methods=["GET"])
 @jwt_required()
 def jwt_protected():
     return "JWT Auth: Access Granted"
 
-@app.route('/admin-only')
+@app.route('/admin-only', methodes["GET"])
 @jwt_required()
 def admin_only():
-    claims = get_jwt()
-    if claims.get('role') != 'admin':
+    current_user = get_jwt_identify()
+    if current_user.get('role') != 'admin':
         return jsonify({"error": "Admin access required"}), 403
     return "Admin Access: Granted"
 
