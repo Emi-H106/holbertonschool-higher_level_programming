@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, make_response
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
@@ -68,9 +68,11 @@ def admin_only():
     return "Admin Access: Granted"
 
 
-@auth.error_response
-def unauthorized_response():
-    return jsonify({"error": "Unauthorized access"}), 401
+@auth.error_handler
+def unauthorized():
+    res = make_response(jsonify({"error": "Unauthorized access"}), 401)
+    res.headers["WWW-Authenticate"] = 'Basic realm="Authentication Required"'
+    return res
 
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
