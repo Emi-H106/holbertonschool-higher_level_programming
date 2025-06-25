@@ -23,9 +23,10 @@ def filter_states_by_name(username, password, database, state_name):
         )
 
     cursor = db.cursor()
-    query = ("SELECT * FROM states WHERE name LIKE '{}'"
-             "ORDER BY id ASC"
-            ).format(state_name)
+    query = (
+        "SELECT * FROM states WHERE name LIKE '{}'"
+        "ORDER BY id ASC"
+    ).format(state_name)
     cursor.execute(query)
     results = cursor.fetchall()
     for row in results:
