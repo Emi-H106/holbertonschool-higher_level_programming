@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This script retrieves all cities from the specified database and
-displays the city ID, city name, and the name of the state to which the city belongs.
+displays the city ID, city name, and the name of the state to
+which the city belongs.
 """
 
 import MySQLdb
@@ -10,7 +11,8 @@ import sys
 
 def list_cities(username, password, database):
     """
-    Retrieve all cities from the database and display them in ascending order by ID.
+    Retrieve all cities from the database and display them
+    in ascending order by ID.
     """
     db = MySQLdb.connect(
             host="localhost",
