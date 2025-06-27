@@ -19,12 +19,13 @@ def filter_states_by_name(username, password, database, state_name):
             port=3306,
             user=username,
             passwd=password,
-            db=database
+            db=database,
+            charset="utf8"
         )
 
     cursor = db.cursor()
     query = (
-        "SELECT * FROM states WHERE name LIKE '{}'"
+        "SELECT * FROM states WHERE name = BINARY '{}'"
         "ORDER BY id ASC"
     ).format(state_name)
     cursor.execute(query)
