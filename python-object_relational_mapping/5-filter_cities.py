@@ -15,7 +15,7 @@ def list_cities_by_states(username, password, database, state_name):
     display them in ascending order by ID.
     """
     try:
-    db = MySQLdb.connect(
+        db = MySQLdb.connect(
             host="localhost",
             port=3306,
             user=username,
@@ -32,11 +32,11 @@ def list_cities_by_states(username, password, database, state_name):
     cursor.execute(query, (state_name,))
     results = cursor.fetchall()
     cities_list = [row[0] for row in results]
-    cities_list_result = ", ", end="".join(cities_list)
+    cities_list_result = ", ".join(cities_list)
     print(cities_list_result)
 
     except MySQLdb.Error as e:
-    print(f"Error connecting to MySQL: {e}")
+        print(f"Error connecting to MySQL: {e}")
 
     cursor.close()
     db.close()
