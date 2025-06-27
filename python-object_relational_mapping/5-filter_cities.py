@@ -3,9 +3,8 @@
 This script retrieves and displays all cities from the database
 that match the specified state name
 """
-import sys
 import MySQLdb
-
+import sys
 
 def list_cities_by_states(username, password, database, state_name):
     """
