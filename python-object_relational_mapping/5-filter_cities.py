@@ -6,6 +6,7 @@ that match the specified state name
 import MySQLdb
 import sys
 
+
 def list_cities_by_states(username, password, database, state_name):
     """
     Retrieve all cities that match the specified state name and
