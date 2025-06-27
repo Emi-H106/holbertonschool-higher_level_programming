@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script retrieves and displays all cities from the database
+This module retrieves and displays all cities from the database
 that match the specified state name
 """
 
