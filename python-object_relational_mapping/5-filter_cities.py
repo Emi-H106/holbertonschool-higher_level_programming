@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module retrieves and displays all cities from the database
+This script retrieves and displays all cities from the database
 that match the specified state name
 """
 
@@ -23,17 +23,16 @@ def list_cities_by_states(username, password, database, state_name):
             db=database
         )
 
-    cursor = db.cursor()
-    query = """
-    SELECT cities.name FROM cities
-    JOIN states ON cities.state_id = states.id
-    WHERE states.name = %s ORDER BY cities.id ASC
-    """
-    cursor.execute(query, (state_name,))
-    results = cursor.fetchall()
-    cities_list = [row[0] for row in results]
-    cities_list_result = ", ".join(cities_list)
-    print(cities_list_result)
+        cursor = db.cursor()
+        query = """
+        SELECT cities.name FROM cities
+        JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s ORDER BY cities.id ASC
+        """
+        cursor.execute(query, (state_name,))
+        results = cursor.fetchall()
+        cities_list = [row[0] for row in results]
+        print(", ".join(cities_list))
 
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
