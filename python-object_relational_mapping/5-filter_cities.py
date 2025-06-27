@@ -12,28 +12,26 @@ def list_cities_by_states(username, password, database, state_name):
     Retrieve all cities that match the specified state name and
     display them in ascending order by ID.
     """
-    try:
-        db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=username,
-            passwd=password,
-            db=database
-        )
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database
+    )
 
-        cursor = db.cursor()
-        query = """
-        SELECT cities.name FROM cities
-        JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s ORDER BY cities.id ASC
-        """
-        cursor.execute(query, (state_name,))
-        results = cursor.fetchall()
-        cities_list = [row[0] for row in results]
-        print(", ".join(cities_list))
+    cursor = db.cursor()
 
-    except MySQLdb.Error as e:
-        print(f"Error connecting to MySQL: {e}")
+    query = """
+    SELECT cities.name FROM cities
+    JOIN states ON cities.state_id = states.id
+    WHERE states.name = %s
+    ORDER BY cities.id ASC;
+    """
+    cursor.execute(query, (state_name,))
+    results = cursor.fetchall()
+    cities_list = [row[0] for row in results]
+    print(", ".join(cities_list))
 
     cursor.close()
     db.close()
