@@ -36,7 +36,7 @@ def list_cities_by_states(username, password, database, state_name):
     print(cities_list_result)
 
     except MySQLdb.Error as e:
-        print(f"Error connecting to MySQL: {e}")
+    print(f"Error connecting to MySQL: {e}")
 
     cursor.close()
     db.close()
