@@ -8,6 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
     """
     The State class corresponds to the states table in the database
