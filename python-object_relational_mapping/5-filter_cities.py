@@ -3,8 +3,8 @@
 This script retrieves and displays all cities from the database
 that match the specified state name
 """
-import MySQLdb
 import sys
+import MySQLdb
 
 
 def list_cities_by_states(username, password, database, state_name):
@@ -29,7 +29,9 @@ def list_cities_by_states(username, password, database, state_name):
     ORDER BY cities.id ASC;
     """
     cursor.execute(query, (state_name,))
+
     results = cursor.fetchall()
+
     cities_list = [row[0] for row in results]
     print(", ".join(cities_list))
 
