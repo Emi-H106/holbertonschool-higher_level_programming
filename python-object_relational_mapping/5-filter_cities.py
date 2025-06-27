@@ -3,8 +3,6 @@
 This script retrieves and displays all cities from the database
 that match the specified state name
 """
-
-
 import MySQLdb
 import sys
 
