@@ -68,6 +68,11 @@ def products():
         products_list = read_json_file()
     elif source == 'csv':
         products_list = read_csv_file()
+    elif source == 'sql':
+        try:
+            products_list = read_sqlite()
+        except sqlite3.Error as e:
+            return render_template('product_display.html', error=f"Database error: {e}")
     else:
         return render_template('product_display.html', error="Wrong source")
     
