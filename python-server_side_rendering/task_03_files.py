@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
+import csv
 
 app = Flask(__name__)
 
@@ -52,7 +53,7 @@ def products():
     else:
         return render_template('product_display.html', error="Wrong source")
     
-     if product_id:
+    if product_id:
         try:
             product_id = int(product_id)
             filtered = [p for p in products_list if p['id'] == product_id]
