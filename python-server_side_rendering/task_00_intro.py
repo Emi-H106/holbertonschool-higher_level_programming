@@ -17,7 +17,7 @@ def generate_invitations(template, attendees):
         print("No data provided, no output files generated.")
         return
     
-     for idx, attendee in enumerate(attendees, start=1):
+    for idx, attendee in enumerate(attendees, start=1):
         name = attendee.get("name") or "N/A"
         event_title = attendee.get("event_title") or "N/A"
         event_date = attendee.get("event_date") or "N/A"
